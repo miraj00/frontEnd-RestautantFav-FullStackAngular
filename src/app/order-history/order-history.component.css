@@ -1,0 +1,34 @@
+
+table, th , td  {
+    border: none;
+    border-color: #f1f1f1;
+    border-collapse: collapse;
+    padding-left: 50px;
+    
+    
+  }
+
+
+  #buttonStyle {
+    background-color: rgb(12, 12, 121);
+    color: white;
+    border: 2px solid rgb(12, 12, 121) ;
+    border-radius: 7px;
+    align-content: center;
+    width: 90%;
+    height : 25px;
+  
+  }
+
+  #buttonStyle:hover {
+    background-color: orange;
+    color: white;
+    
+  }
+
+button {
+    width : 70px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+

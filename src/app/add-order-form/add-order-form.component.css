@@ -1,0 +1,24 @@
+.card {
+ 
+    padding-left: 20px; 
+    border: 2px solid black;
+    align-content: center; 
+    margin-left: 300px;
+ }
+
+ .center {
+    align-content: center;
+ }
+
+button {
+    margin-left: 100px;
+    background-color: #ef6738;
+    color: white;
+    
+    width: 30%;
+    height : 25px;
+    border-radius: 7px;
+    border: none;
+}
+
+

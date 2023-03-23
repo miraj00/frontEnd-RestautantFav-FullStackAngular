@@ -1,0 +1,44 @@
+
+<table style=" margin-left : 100px">
+    <thead>
+        <tr>
+            <th>Description</th>    
+            <th>Restaurant</th>
+            <th>Rating</th>
+            <th>Order Again?</th>
+            <th></th>
+        </tr>
+    </thead>
+   
+    <tbody>
+        <tr>
+            <td> first discription</td>
+            <td>restaurant Name</td>
+            <td>ratingsss</td>  
+            <td>orderAgain or not</td>    
+            <td><button id="buttonStyle" >
+                <fa-icon [icon]="faTrashCan"></fa-icon>
+                </button></td>
+        </tr>    
+        <tr>
+            <td> first discription</td>
+            <td>restaurant Name</td>
+            <td>ratingsss</td>  
+            <td>orderAgain or not</td>    
+            <td><button id="buttonStyle" > 
+                <fa-icon [icon]="faTrashCan"></fa-icon>
+              
+            </button></td>
+        </tr>
+
+        <tr *ngFor="let order of showOrders; index as i"> 
+
+                <td>{{order.description}}</td>
+                <td>{{order.restaurant}}</td>
+                <td>{{order.rating}}</td>  
+                <td>{{order.orderAgain}}</td>
+                <button (click)="deleteOrder(i)" id="butttonStyle" ><fa-icon [icon]="faTrashCan"></fa-icon></button>
+        </tr>
+    </tbody>
+
+</table>

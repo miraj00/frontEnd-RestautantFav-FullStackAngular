@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row align-items-center vh-100">
+        <div class="col-6 mx-auto">
+  
+  
+  
+             <div class="card"  style="width: 20%; background-color: #03324c ; color: #f2f8fc;">
+  
+                 <div class="card-body">
+
+
+
+<form (ngSubmit)="add()">
+    <h3 style="text-align: center;">Add an order</h3>
+    <div >
+      <label class="center" for="description">Description :</label>  &#20; &#20; 
+      <input type="text" name="description" id="description"  class="center" [(ngModel)]="description" />
+    </div>
+    <br/>
+    <div class="center">
+      <label for="restaurant">Restaurant :</label>   &#20; &#20; &#20;
+      <input type="text" name="restaurant" id="restaurant" [(ngModel)]="restaurant" />
+    </div>
+    <br/>
+    <div class="center">
+      <label for="rating"> Rating (1-5) : </label>  &#20;
+      <input type="number" name="rating" id="rating" [(ngModel)]="rating" />
+    </div>
+    <br/>
+    <div class="center">
+    <label for="orderBoolean"> Order Again </label>  &#20; &#20;
+    <input type="checkbox" id="orderBoolean" name="orderBoolean" value="true">
+    </div>
+   
+    
+  </form>
+
+  <button>Submit</button>
+  <br/> <br/>
+
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
