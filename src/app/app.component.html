@@ -1,14 +1,17 @@
 
 <p> Hello ......</p>
-<div *ngFor="let result of ResultData"; index as i > 
+
+<div *ngFor="let result of orders; index as i"> 
   <ul> 
 
-      <li> {{result.id }}</li>
-      <li> {{result.description }}</li>
-      <li> {{result.rating }}</li>
+      <li> {{result.id}}</li>
+      <li> {{result.description}}</li>
+      <li> {{result.rating}}</li>
       <li> {{result.orderAgain}}</li>
 
   </ul>
   
 
 </div>
+
+<p> {{ orders }} </p>

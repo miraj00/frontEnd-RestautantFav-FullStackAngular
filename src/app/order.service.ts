@@ -10,13 +10,13 @@ import { Order } from './order';
 
 export class OrderService {
 
-  url :string = "https://localhost:8080/";
+  url :string = "http://localhost:8080";
  
   constructor( private http:HttpClient) { }
 
-  getAllOrders(): Observable<Order[]> {
-
-       return this.http.get<Order[]>(this.url);
+  getAllOrders(): Observable<Order> {
+      console.log(this.http.get<Order>(this.url));
+       return this.http.get<Order>(this.url);
   }
 
 

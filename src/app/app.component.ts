@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Order } from './order';
 import { OrderService } from './order.service';
 
@@ -7,18 +7,19 @@ import { OrderService } from './order.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent  {
   title = 'frontEnd-FavRestaurant';
 
-  ResultData: Order [] | undefined;
+  orders : Order = ({} as any) as Order;
+  // orders : Order [] = [] ;
 
   constructor(private api : OrderService) {}
 
-  ngOninit(){ 
+  ngOninit(): void{  
     this.api.getAllOrders().subscribe(
           (result)=> {
-            this.ResultData = result;
-            console.log(this.ResultData + "Helllo ")});
+            this.orders = result;
+            });
           }       
 
 
