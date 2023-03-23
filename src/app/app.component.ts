@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Order } from './order';
+import { OrderService } from './order.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'frontEnd-FavRestaurant';
+
+  ResultData: Order [] | undefined;
+
+  constructor(private api : OrderService) {}
+
+  ngOninit(){ 
+    this.api.getAllOrders().subscribe(
+          (result)=> {
+            this.ResultData = result;
+            console.log(this.ResultData + "Helllo ")});
+          }       
+
+
+
+
+
 }
