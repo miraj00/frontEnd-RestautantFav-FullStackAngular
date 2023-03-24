@@ -8,5 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent  {
   title = 'frontEnd-FavRestaurant';
  
+  // onClick() {
+  //   console.log("Button clicked!");
+  // }
 
 }

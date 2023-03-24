@@ -15,20 +15,17 @@
             <td> first discription</td>
             <td>restaurant Name</td>
             <td>ratingsss</td>  
-            <td>orderAgain or not</td>    
+            <td>✓</td>    
             <td><button id="buttonStyle" >
-                <fa-icon [icon]="faTrashCan"></fa-icon>
-                </button></td>
+                <fa-icon [icon]="faTrashCan"></fa-icon></button></td>
         </tr>    
         <tr>
             <td> first discription</td>
             <td>restaurant Name</td>
             <td>ratingsss</td>  
-            <td>orderAgain or not</td>    
+            <td>X</td>    
             <td><button id="buttonStyle" > 
-                <fa-icon [icon]="faTrashCan"></fa-icon>
-              
-            </button></td>
+                <fa-icon [icon]="faTrashCan"></fa-icon></button></td>
         </tr>
 
         <tr *ngFor="let order of showOrders; index as i"> 
@@ -36,9 +33,13 @@
                 <td>{{order.description}}</td>
                 <td>{{order.restaurant}}</td>
                 <td>{{order.rating}}</td>  
-                <td>{{order.orderAgain}}</td>
+                <td> *ngInf="order.orderAgain">✓</td>
+                <td> *ngInf="!order.orderAgain">X</td>
                 <button (click)="deleteOrder(i)" id="butttonStyle" ><fa-icon [icon]="faTrashCan"></fa-icon></button>
         </tr>
     </tbody>
 
 </table>
+
+
+<!-- <button (click)="onClick()">Another Click Me!</button> -->

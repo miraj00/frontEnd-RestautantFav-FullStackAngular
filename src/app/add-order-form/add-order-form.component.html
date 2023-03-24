@@ -24,18 +24,19 @@
     <br/>
     <div class="center">
       <label for="rating"> Rating (1-5) : </label>  &#20;
-      <input type="number" name="rating" id="rating" [(ngModel)]="rating" />
+      <input type="number"  min="1" max="5" name="rating" id="rating" [(ngModel)]="rating" />
     </div>
     <br/>
     <div class="center">
     <label for="orderBoolean"> Order Again </label>  &#20; &#20;
-    <input type="checkbox" id="orderBoolean" name="orderBoolean" value="true">
+    <input type="checkbox" id="orderBoolean" name="orderBoolean" value="true" [(ngModel)]="orderAgain">
     </div>
    
-    
+    <button>Submit</button>
+    <!-- <button (click)="addOrder()">Submit</button> -->
   </form>
 
-  <button>Submit</button>
+  
   <br/> <br/>
 
               </div>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Order } from '../order';
 import { RestaurantFavesService } from '../restaurant-faves.service';
+import { Order } from '../order';
+
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -23,19 +24,32 @@ export class OrderHistoryComponent {
 
   ngOninit(): void{ 
     this.loadOrders();
+   
   }
 
   loadOrders(): void {this.api.getAllOrders().subscribe(
-          data=>{
+          (data)=>{
             console.log(data);
-            this.showOrders = data;});
+            this.showOrders = data;}
+
+  );
   }       
   
+
+ getOrder():void { this.api.getOrder(2).subscribe(
+    (result)=> console.log(result));
+
+  }
   deleteOrder(id: number) : void {
     this.api.deleteOrder(id).subscribe(
       ()=> this.loadOrders());
     }
-    
+  
+    // onClick() {
+    //   console.log("Button clicked!");
+    // }
+
+
 }
           
 
