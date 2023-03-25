@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RestaurantFavesService } from '../restaurant-faves.service';
 import { Order } from '../order';
 
@@ -11,7 +11,7 @@ import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 })
 
 
-export class OrderHistoryComponent {
+export class OrderHistoryComponent  {
 
   title = 'frontEnd-FavRestaurant';
   faTrashCan = faTrashCan;
@@ -22,13 +22,13 @@ export class OrderHistoryComponent {
 
   constructor(private api : RestaurantFavesService) {}
 
-  ngOninit(): void{ 
+  ngOnInit(): void{ 
     this.loadOrders();
    
   }
 
   loadOrders(): void {this.api.getAllOrders().subscribe(
-          (data)=>{
+          (data : Order [])=>{
             console.log(data);
             this.showOrders = data;}
 

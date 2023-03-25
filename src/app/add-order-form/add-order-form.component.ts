@@ -9,7 +9,7 @@ import { Order } from '../order';
 export class AddOrderFormComponent {
   
     @Output() addOrder = new EventEmitter<Order>();
-
+    id : number = 0;
     description: string = "";
     restaurant : string = "";
     rating: number= 0;
@@ -23,6 +23,7 @@ export class AddOrderFormComponent {
     add = () : void => {
 
         this.addOrder.emit({
+            id: this.id,
             description : this.description,
             restaurant : this.restaurant,
             rating : this.rating,

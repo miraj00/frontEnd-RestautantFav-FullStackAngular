@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true, // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require("path").join(__dirname, "./coverage/bookshelf2-frontend"),
+      dir: require("path").join(__dirname, "./coverage/FrontEnd-FavRestaurant"),
       subdir: ".",
       reporters: [{ type: "html" }, { type: "text-summary" }],
     },
