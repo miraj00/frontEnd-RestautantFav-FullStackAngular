@@ -16,30 +16,26 @@ export class OrderHistoryComponent  {
   title = 'frontEnd-FavRestaurant';
   faTrashCan = faTrashCan;
 
- //  showOrders : Order = ({} as any) as Order;
+
    showOrders : Order [] = [] ;
-//   showOrders : Object[] = [];
+
 
   constructor(private api : RestaurantFavesService) {}
 
   ngOnInit(): void{ 
     this.loadOrders();
-   
   }
 
   loadOrders(): void {this.api.getAllOrders().subscribe(
           (data : Order [])=>{
             console.log(data);
-            this.showOrders = data;}
-
-  );
+            this.showOrders = data;});
   }       
   
-
- getOrder():void { this.api.getOrder(2).subscribe(
+  getOrder():void { this.api.getOrder(2).subscribe(
     (result)=> console.log(result));
-
   }
+
   deleteOrder(id: number) : void {
     this.api.deleteOrder(id).subscribe(
       ()=> this.loadOrders());
@@ -49,6 +45,11 @@ export class OrderHistoryComponent  {
     //   console.log("Button clicked!");
     // }
 
+    addOrder(newOrder:Order){
+      console.log("Heyas");
+      this.showOrders.push(newOrder);
+      this.loadOrders();
+    }
 
 }
           

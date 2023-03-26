@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Order } from '../order';
+import { RestaurantFavesService } from '../restaurant-faves.service';
 
 @Component({
   selector: 'app-add-order-form',
@@ -7,36 +8,24 @@ import { Order } from '../order';
   styleUrls: ['./add-order-form.component.css']
 })
 export class AddOrderFormComponent {
+   
+    @Output() orderSave = new EventEmitter<Order>(); 
+    newOrder:Order = ({} as any) as Order; 
+    constructor(private orderAPI: RestaurantFavesService){}
   
-    @Output() addOrder = new EventEmitter<Order>();
-    id : number = 0;
-    description: string = "";
-    restaurant : string = "";
-    rating: number= 0;
-    orderAgain: boolean = false;
-
-    constructor() {}
-
-    ngOnInit(): void {}
-
-
-    add = () : void => {
-
-        this.addOrder.emit({
-            id: this.id,
-            description : this.description,
-            restaurant : this.restaurant,
-            rating : this.rating,
-            orderAgain:this.orderAgain 
-
-
-        });
-
-
-
+    addOrder(){
+      //no param needed since this already has access to new order 
+      this.orderAPI.createOrder(this.newOrder).subscribe(
+        () =>{
+          //This makes the new order availiable to other components so they can use it
+          this.orderSave.emit(this.newOrder);
+          this.newOrder = ({} as any) as Order; 
+          
+        }
+      );  
+    }    
 }
 
 
 
 
-}

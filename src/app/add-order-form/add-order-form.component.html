@@ -8,34 +8,34 @@
   
                  <div class="card-body">
 
+                  <!-- (ngSubmit)="add()" -->
 
-
-<form (ngSubmit)="add()">
+<form>
     <h3 style="text-align: center;">Add an order</h3>
     <div >
       <label class="center" for="description">Description :</label>  &#20; &#20; 
-      <input type="text" name="description" id="description"  class="center" [(ngModel)]="description" />
+      <input type="text" class="center" [(ngModel)]="newOrder.description" />
     </div>
     <br/>
     <div class="center">
       <label for="restaurant">Restaurant :</label>   &#20; &#20; &#20;
-      <input type="text" name="restaurant" id="restaurant" [(ngModel)]="restaurant" />
+      <input type="text" [(ngModel)]="newOrder.restaurant" />
     </div>
     <br/>
     <div class="center">
       <label for="rating"> Rating (1-5) : </label>  &#20;
-      <input type="number"  min="1" max="5" name="rating" id="rating" [(ngModel)]="rating" />
+      <input type="number"  min="1" max="5" [(ngModel)]="newOrder.rating" />
     </div>
     <br/>
     <div class="center">
     <label for="orderBoolean"> Order Again </label>  &#20; &#20;
-    <input type="checkbox" id="orderBoolean" name="orderBoolean" value="true" [(ngModel)]="orderAgain">
+    <input type="checkbox" value="true" [(ngModel)]="newOrder.orderAgain"/>
     </div>
    
-    <button>Submit</button>
-    <!-- <button (click)="addOrder()">Submit</button> -->
+    <!-- <button>Submit</button> -->
+    <button (click)="addOrder()">Submit</button>
   </form>
-
+ 
   
   <br/> <br/>
 

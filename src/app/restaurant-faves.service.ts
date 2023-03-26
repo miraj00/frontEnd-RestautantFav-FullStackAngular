@@ -26,7 +26,7 @@ export class RestaurantFavesService {
     return this.http.delete<void>(`${this.url}/${id}`);
   }
 
-  addOrder(newOrder: Order) : Observable<Order> {
+  createOrder(newOrder: Order) : Observable<Object> {
     return this.http.post<Order>(`${this.url}`, newOrder);
   }
 
